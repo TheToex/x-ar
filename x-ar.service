@@ -1,0 +1,15 @@
+[Unit]
+Description=Xray Auto Restart Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/x-ar/x-ar-core.sh
+Restart=always
+RestartSec=5
+
+# optional safety
+User=root
+
+[Install]
+WantedBy=multi-user.target
